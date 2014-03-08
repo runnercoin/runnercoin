@@ -2539,23 +2539,23 @@ bool CRunnercoinHooks::GenesisBlock(CBlock& block)
         txNew.vin[0].scriptSig = CScript() << vchFromString("\nRunnercoin test net\n");
         txNew.vout[0].scriptPubKey.SetBitcoinAddress("hRDGZuirWznh25mqZM5bKmeEAcw7dmDwUx");
         txNew.vout[0].nValue = 100 * COIN;     // Preallocated coins for easy testing and giveaway
-        block.nTime    = 1391193136;
-        block.nNonce   = 1997599826u;
+        block.nTime    = 1394289055;
+        block.nNonce   = 1900000006u;
     }
     else
     {
         const char *timestamp =
                 "\n"
                 "Runnercoin genesis timestamp\n"
-                "31/Jan/2014 20:10 GMT\n"
-                "Bitcoin block 283440: 0000000000000001795d3c369b0746c0b5d315a6739a7410ada886de5d71ca86\n"
-                "Litecoin block 506479: 77c49384e6e8dd322da0ebb32ca6c8f047d515d355e9f22b116430a888fffd38\n"
+                "08/March/2014 20:10 GMT\n"
+                "http://p2pfoundation.ning.com/forum/topics/bitcoin-open-source?commentId=2003008%3AComment%3A52186"
+                "I am not Dorian Nakamoto."
             ;
         txNew.vin[0].scriptSig = CScript() << vchFromString(std::string(timestamp));
-        txNew.vout[0].scriptPubKey.SetBitcoinAddress("HVguPy1tWgbu9cKy6YGYEJFJ6RD7z7F7MJ");
-        txNew.vout[0].nValue = 85000 * COIN;     // Preallocated coins for bounties and giveaway
-        block.nTime    = 1391199780;
-        block.nNonce   = 1906435634u;
+        txNew.vout[0].scriptPubKey.SetBitcoinAddress("HRunPy1tWgbu9cKy6YGYEJFJ6RD7z7F7MJ");
+        txNew.vout[0].nValue = 4200000 * COIN;     // Preallocated coins for bounties and giveaway
+        block.nTime    = 1394289099;
+        block.nNonce   = 1900000004u;
     }
     block.vtx.push_back(txNew);
     block.hashMerkleRoot = block.BuildMerkleTree(false);
@@ -2589,7 +2589,7 @@ string CRunnercoinHooks::IrcPrefix()
 
 unsigned short GetDefaultPort()
 {
-    return fTestNet ? 18398 : 8398;
+    return fTestNet ? 18472 : 8472;
 }
 
 unsigned int pnSeed[] = { 0 };

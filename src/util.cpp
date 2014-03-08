@@ -752,7 +752,7 @@ void ThreadOneMessageBox(string strMessage)
         return;
     fMessageBoxOpen = true;
 #ifdef GUI
-    uiInterface.ThreadSafeMessageBox(strMessage, "Huntercoin", wxOK | wxICON_EXCLAMATION);
+    uiInterface.ThreadSafeMessageBox(strMessage, "Runnercoin", wxOK | wxICON_EXCLAMATION);
 #else
     ThreadSafeMessageBox(strMessage, "Runnercoin", wxOK | wxICON_EXCLAMATION);
 #endif
@@ -1046,7 +1046,7 @@ void AddTimeData(unsigned int ip, int64 nTime)
                     string strMessage = _("Warning: Please check that your computer's date and time are correct.  If your clock is wrong Runnercoin will not work properly.");
                     strMiscWarning = strMessage;
                     printf("*** %s\n", strMessage.c_str());
-                    boost::thread(boost::bind(MyMessageBox, strMessage+" ", string("Huntercoin"), wxOK | wxICON_EXCLAMATION, (wxWindow*)NULL, -1, -1));
+                    boost::thread(boost::bind(MyMessageBox, strMessage+" ", string("Runnercoin"), wxOK | wxICON_EXCLAMATION, (wxWindow*)NULL, -1, -1));
                 }
             }
         }

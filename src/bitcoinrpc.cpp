@@ -56,7 +56,7 @@ void ThreadCleanWalletPassphrase(void* parg);
 
 static inline unsigned short GetDefaultRPCPort()
 {
-    return GetBoolArg("-testnet", false) ? 18399 : 8399;
+    return GetBoolArg("-testnet", false) ? 18473 : 8473;
 }
 
 Object JSONRPCError(int code, const string& message)
@@ -83,7 +83,7 @@ void PrintConsole(const char* format, ...)
     }
     printf("%s", buffer);
 #if defined(__WXMSW__) && defined(GUI)
-    MyMessageBox(buffer, "Huntercoin", wxOK | wxICON_EXCLAMATION);
+    MyMessageBox(buffer, "Runnercoin", wxOK | wxICON_EXCLAMATION);
 #else
     fprintf(stdout, "%s", buffer);
 #endif
