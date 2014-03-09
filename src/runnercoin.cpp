@@ -53,7 +53,7 @@ extern Value sendtoaddress(const Array& params, bool fHelp);
 const static std::string VALUE_DEAD("{\"dead\":1}");
 
 uint256 hashRunnercoinGenesisBlock[2] = {
-        uint256("00000000db7eb7a9e1a06cf995363dcdc4c28e8ae04827a961942657db9a1631"),    // Main net
+        uint256("f01cb7d56ebcfc52fd6b440d7472a050fde6c8d91196ccda8621f51b0c5e8d8b"),    // Main net
         uint256("000000492c361a01ce7558a3bfb198ea3ff2f86f8b0c2e00d26135c53f4acbf7")     // Test net
     };
 
@@ -2552,10 +2552,10 @@ bool CRunnercoinHooks::GenesisBlock(CBlock& block)
                 "I am not Dorian Nakamoto."
             ;
         txNew.vin[0].scriptSig = CScript() << vchFromString(std::string(timestamp));
-        txNew.vout[0].scriptPubKey.SetBitcoinAddress("HRunPy1tWgbu9cKy6YGYEJFJ6RD7z7F7MJ");
+        txNew.vout[0].scriptPubKey.SetBitcoinAddress("HB6v7631AL7QjXzvoK5Ui8GRYsX8pwj5pH");
         txNew.vout[0].nValue = 4200000 * COIN;     // Preallocated coins for bounties and giveaway
-        block.nTime    = 1394289099;
-        block.nNonce   = 1900000004u;
+        block.nTime    = 1394289055;
+        block.nNonce   = 0010041004u;
     }
     block.vtx.push_back(txNew);
     block.hashMerkleRoot = block.BuildMerkleTree(false);
