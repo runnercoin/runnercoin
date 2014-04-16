@@ -739,7 +739,7 @@ void PrintException(std::exception* pex, const char* pszThread)
     strMiscWarning = pszMessage;
 #ifdef GUI
     if (wxTheApp && !fDaemon)
-        MyMessageBox(pszMessage, "Huntercoin", wxOK | wxICON_ERROR);
+        MyMessageBox(pszMessage, "Runnercoin", wxOK | wxICON_ERROR);
 #endif
     throw;
 }
