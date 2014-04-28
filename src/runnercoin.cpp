@@ -53,7 +53,7 @@ extern Value sendtoaddress(const Array& params, bool fHelp);
 const static std::string VALUE_DEAD("{\"dead\":1}");
 
 uint256 hashRunnercoinGenesisBlock[2] = {
-        uint256("0000000077d17dcb1fdf22c0553eaa7b9e568766b712cf61c0d9765f9251ad11"),    // Main net
+        uint256("00000000ced85712da9595beb0f9053206de5f7e3b5afda17ce79998dab5d194"),    // Main net
         uint256("000000492c361a01ce7558a3bfb198ea3ff2f86f8b0c2e00d26135c53f4acbf7")     // Test net
     };
 
@@ -2540,6 +2540,7 @@ bool CRunnercoinHooks::GenesisBlock(CBlock& block)
         txNew.vout[0].scriptPubKey.SetBitcoinAddress("hRDGZuirWznh25mqZM5bKmeEAcw7dmDwUx");
         txNew.vout[0].nValue = 100 * COIN;     // Preallocated coins for easy testing and giveaway
         block.nTime    = 1391193136;
+        block.nBits    = 0x1d00ffff;
         block.nNonce   = 1997599826u;
     }
     else
@@ -2547,16 +2548,16 @@ bool CRunnercoinHooks::GenesisBlock(CBlock& block)
         const char *timestamp =
                 "\n"
                 "Runnercoin genesis timestamp\n"
-                "08/March/2014 20:20 GMT\n"
+                "08/March/2014 20:01 GMT\n"
                 "http://p2pfoundation.ning.com/forum/topics/bitcoin-open-source?commentId=2003008%3AComment%3A52186"
                 "I am not Dorian Nakamoto."
             ;
         txNew.vin[0].scriptSig = CScript() << vchFromString(std::string(timestamp));
-        txNew.vout[0].scriptPubKey.SetBitcoinAddress("HVguPy1tWgbu9cKy6YGYEJFJ6RD7z7F7MJ");
-        txNew.vout[0].nValue = 85000 * COIN;     // Preallocated coins for bounties and giveaway
-        block.nTime    = 1397677764;
+        txNew.vout[0].scriptPubKey.SetBitcoinAddress("16muZb7rBAsvjLGegyX5pv2QTrJZ3rZx7o");
+        txNew.vout[0].nValue = 4200000 * COIN;     // Preallocated coins for bounties and giveaway
+        block.nTime    = 1398689510;
         block.nBits    = 0x1d00ffff;
-        block.nNonce   = 2775906003u;
+        block.nNonce   = 237112847u;
     }
     block.vtx.push_back(txNew);
     block.hashMerkleRoot = block.BuildMerkleTree(false);

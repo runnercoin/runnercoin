@@ -107,7 +107,7 @@ static void QueueShutdown()
  */
 static std::string Translate(const char* psz)
 {
-    return QCoreApplication::translate("huntercoin-core", psz).toStdString();
+    return QCoreApplication::translate("runnercoin-core", psz).toStdString();
 }
 
 /* Handle runaway exceptions. Shows a message box with the problem and quits the program.
@@ -143,7 +143,7 @@ int main(int argc, char *argv[])
         else
         {
             // This message can not be translated, as translation is not initialized yet
-            // (which not yet possible because lang=XX can be overridden in huntercoin.conf in the data directory)
+            // (which not yet possible because lang=XX can be overridden in runnercoin.conf in the data directory)
             QMessageBox::critical(0, "Runnercoin",
                                   QString("Error: Specified data directory \"%1\" does not exist.").arg(QString::fromStdString(mapArgs["-datadir"])));
             return 0;
@@ -165,8 +165,8 @@ int main(int argc, char *argv[])
     if (!boost::filesystem::is_directory(GetDataDir()))
     {
         // This message can not be translated, as translation is not initialized yet
-        // (which not yet possible because lang=XX can be overridden in huntercoin.conf in the data directory)
-        QMessageBox::critical(0, "Huntercoin",
+        // (which not yet possible because lang=XX can be overridden in runnercoin.conf in the data directory)
+        QMessageBox::critical(0, "Runnercoin",
                               QString("Error: Specified data directory \"%1\" does not exist.").arg(QString::fromStdString(mapArgs["-datadir"])));
         return 0;
     }
