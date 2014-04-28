@@ -2554,7 +2554,7 @@ bool CRunnercoinHooks::GenesisBlock(CBlock& block)
             ;
         txNew.vin[0].scriptSig = CScript() << vchFromString(std::string(timestamp));
         txNew.vout[0].scriptPubKey.SetBitcoinAddress("HVUy2LwoG9vS6S423J1RXxUYGRBCVzE86d");
-        txNew.vout[0].nValue = 4200000 * COIN;     // Preallocated coins for bounties and giveaway
+        txNew.vout[0].nValue = 4200000 * COIN;    // Preallocated coins for bounties and giveaway
         block.nTime    = 1398714336;
         block.nBits    = 0x1d00ffff;
         block.nNonce   = 1674387463u;
