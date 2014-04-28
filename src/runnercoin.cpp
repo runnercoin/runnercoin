@@ -53,7 +53,7 @@ extern Value sendtoaddress(const Array& params, bool fHelp);
 const static std::string VALUE_DEAD("{\"dead\":1}");
 
 uint256 hashRunnercoinGenesisBlock[2] = {
-        uint256("00000000ced85712da9595beb0f9053206de5f7e3b5afda17ce79998dab5d194"),    // Main net
+        uint256("00000000795c8fc52fa634d338db1fd7ed1c1230a559a1db9d8edaf95f343594"),    // Main net
         uint256("000000492c361a01ce7558a3bfb198ea3ff2f86f8b0c2e00d26135c53f4acbf7")     // Test net
     };
 
@@ -2548,16 +2548,16 @@ bool CRunnercoinHooks::GenesisBlock(CBlock& block)
         const char *timestamp =
                 "\n"
                 "Runnercoin genesis timestamp\n"
-                "08/March/2014 20:01 GMT\n"
+                "08/March/2014 20:00 GMT\n"
                 "http://p2pfoundation.ning.com/forum/topics/bitcoin-open-source?commentId=2003008%3AComment%3A52186"
                 "I am not Dorian Nakamoto."
             ;
         txNew.vin[0].scriptSig = CScript() << vchFromString(std::string(timestamp));
-        txNew.vout[0].scriptPubKey.SetBitcoinAddress("16muZb7rBAsvjLGegyX5pv2QTrJZ3rZx7o");
+        txNew.vout[0].scriptPubKey.SetBitcoinAddress("HVUy2LwoG9vS6S423J1RXxUYGRBCVzE86d");
         txNew.vout[0].nValue = 4200000 * COIN;     // Preallocated coins for bounties and giveaway
-        block.nTime    = 1398689510;
+        block.nTime    = 1398714336;
         block.nBits    = 0x1d00ffff;
-        block.nNonce   = 237112847u;
+        block.nNonce   = 1674387463u;
     }
     block.vtx.push_back(txNew);
     block.hashMerkleRoot = block.BuildMerkleTree(false);
